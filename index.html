@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gapminder Pivot UI Results</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+        "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.25), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.2), transparent 35%),
+        #0f172a;
+      color: #e5e7eb;
+      padding: 48px 20px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      border-radius: 999px;
+      color: #93c5fd;
+      background: rgba(15, 23, 42, 0.7);
+      font-size: 14px;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #f8fafc;
+    }
+
+    .subtitle {
+      margin-top: 14px;
+      color: #cbd5e1;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(96, 165, 250, 0.18),
+        rgba(168, 85, 247, 0.12)
+      );
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(147, 197, 253, 0.65);
+      background: rgba(30, 41, 59, 0.88);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card a {
+      position: relative;
+      z-index: 1;
+      display: block;
+      height: 100%;
+      padding: 24px;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .question {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 18px;
+      border-radius: 14px;
+      background: rgba(59, 130, 246, 0.18);
+      color: #bfdbfe;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .title {
+      margin: 0 0 10px;
+      color: #f8fafc;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .desc {
+      margin: 0;
+      color: #94a3b8;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .arrow {
+      margin-top: 22px;
+      color: #93c5fd;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 42px;
+      text-align: center;
+      color: #64748b;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="badge">Gapminder Interactive Dashboard</div>
+      <h1>Gapminder Pivot UI Results</h1>
+      <p class="subtitle">
+        Explore interactive Pivot UI results for GDP per capita, life expectancy,
+        regression analysis, and regional comparisons.
+      </p>
+    </header>
+
+    <ul class="grid">
+      <li class="card">
+        <a href="q1-history/">
+          <div class="question">Q1</div>
+          <h2 class="title">三洲 gdpPercap 平均值歷史軌跡圖</h2>
+          <p class="desc">比較不同洲別 GDP per capita 的平均值變化趨勢。</p>
+          <div class="arrow">Open result →</div>
+        </a>
+      </li>
+
+      <li class="card">
+        <a href="q2-regression/">
+          <div class="question">Q2</div>
+          <h2 class="title">三洲 loggdpPercap vs lifeExp regression</h2>
+          <p class="desc">觀察所得水準與平均壽命之間的迴歸關係。</p>
+          <div class="arrow">Open result →</div>
+        </a>
+      </li>
+
+      <li class="card">
+        <a href="q3-africa-bin/">
+          <div class="question">Q3</div>
+          <h2 class="title">非洲 gdpPercap 分箱 lifeExp 歷史圖</h2>
+          <p class="desc">以分箱方式分析非洲各國所得與壽命的歷史變化。</p>
+          <div class="arrow">Open result →</div>
+        </a>
+      </li>
+
+      <li class="card">
+        <a href="q4-asia-regression/">
+          <div class="question">Q4</div>
+          <h2 class="title">亞洲分箱 regression</h2>
+          <p class="desc">針對亞洲資料進行分箱後的迴歸分析。</p>
+          <div class="arrow">Open result →</div>
+        </a>
+      </li>
+
+      <li class="card">
+        <a href="q5-americas-binscatter/">
+          <div class="question">Q5</div>
+          <h2 class="title">美洲分箱 binscatter</h2>
+          <p class="desc">用 binscatter 呈現美洲資料的分布與趨勢。</p>
+          <div class="arrow">Open result →</div>
+        </a>
+      </li>
+
+      <li class="card">
+        <a href="q6-americas-regression/">
+          <div class="question">Q6</div>
+          <h2 class="title">美洲分箱 regression</h2>
+          <p class="desc">針對美洲資料進行分箱後的迴歸分析。</p>
+          <div class="arrow">Open result →</div>
+        </a>
+      </li>
+    </ul>
+
+    <footer>
+      Built for Gapminder Pivot UI interactive results.
+    </footer>
+  </main>
+</body>
+</html>
