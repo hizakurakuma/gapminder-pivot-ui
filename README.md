@@ -1,12 +1,12 @@
-﻿# Gapminder PivotUI 分享版
+﻿# Gapminder PivotUI 線上版
 
-本專案是課程作業中使用的 `pivotUI` 互動式資料分析頁面，主要用於分析 `gapminder` 資料，並透過 GitHub Pages 分享已操作完成的 Pivot Table / Regression 結果。
+此版本是建立在金融大數據課程分析 `gapminder` 資料的`pivotUI` 互動式資料分析頁面之上，加上透過 GitHub Pages 分享已操作完成的 Pivot Table / Regression 結果的功能。
 
 ## 重要聲明
 
 原始 `pivotUI` 程式由 **鍾經樊老師** 製作。
 
-本專案只是課堂作業用途的分享版。原始 `pivotUI` 程式由 **鍾經樊老師** 製作，小的沒有重新開發或主張此工具為本人作品；此網頁版只是為了方便同學不需依賴本機路徑，憑網址即可查看其他同學的pivotUI結果，做了一些與 GitHub Pages 分享、URL 狀態保存、snapshot 下載相關的小修改。
+本專案只是課堂作業用途的線上版。原始 `pivotUI` 程式由 **鍾經樊老師** 製作，小的沒有重新開發或主張此工具為本人作品；此網頁版只是為了方便同學不需依賴本機路徑，憑網址即可查看其他同學的pivotUI結果，做了一些與 GitHub Pages 分享、URL 狀態保存、snapshot 下載相關的小修改。
 
 主要修改方向是：
 
